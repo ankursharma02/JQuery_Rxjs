@@ -1,0 +1,52 @@
+    <html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var i=1;
+        $(document).ready(function(){
+        $(this).on("click", function(){
+            var v1=event.target.id;
+        //  document.write(v1[v1.length-1] );
+        
+        var v2=v1[v1.length-1]-i;
+        verd();
+      //  i+=1;
+        var v3=v1.substring(0,v1.length-1)+v2;
+       // var x = event.clientX;
+         var y = event.clientY;
+         var x=$("#"+v1).offset().left;
+                x=x+"px";
+                y=y+"px";
+                $("#"+v1).css("display","none");
+                $("#"+v1).remove();
+                $("#"+v3).css("left",x);
+                $("#"+v3).css("right",y);
+            //  alert(x+"  "+y+" "+ v1+" "+v2+" "+v3);
+
+            
+    });
+    });
+    function verd()
+    {
+        i+=1;
+        return i;
+        
+    }
+        </script>
+    </head>
+
+
+    <body>
+
+
+
+    <table><tr>
+    <td><div id="d1" style="width:80px;height:80px;background-color:red;position: relative;"></div></td>
+    <td><div id="d2" style="width:80px;height:80px;background-color:green;position: relative;"></div></td>
+    <td><div id="d3" style="width:80px;height:80px;background-color:lightgreen;position: relative;"></div></td> 
+    <td><div id="d4" style="width:80px;height:80px;background-color:blue;position: relative;"></div></td>
+    </tr>
+    </table>
+
+    </body>
+    </html>
